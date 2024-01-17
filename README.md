@@ -19,9 +19,10 @@ Given the data and their models:
 3. Create a pull request with your changes to this repository when you are ready
 
 ## Notes
-1. You can use bootstrap or any other CSS framework for your implementation. Try to match the design styles
-2. You can use React but you get bonus points if you do this in Angular :)
-3. You can use either Javascript or Typescript, but prefer the latter. You can import or copy the data from `data.ts` file any way you need to
-4. You can use any of the available browser features/APIs to persist data between page refreshes
+1. You can use `Bootstrap` or any other CSS framework for your implementation **(or none of course)**. Try to match the design
+2. You can use any of the recent Angular versions (at least v14+)
+3. You can import or copy the data from `data.ts` file any way you want
+4. You can use any of the available browser features/APIs to persist data between page reloads
 5. The relations between the data use a classic relational approach (id based)
-6. The undo function is performed **per item** and should work for any item list length
+6. The undo function is performed **per item** and should work for _any item list length_
+7. Try to use best practices as you would always do. Don't focus only on functionality or styling only
