@@ -9,14 +9,14 @@ depicts a part of an online ordering menu.
 * When you click on the item name the size/price section expands. At the same time the other item cards collapse.
 * When you uncheck a size, the related price is set to 0.00, and the input above is disabled
 * User can edit the price (only numbers are allowed). Price changes **persist after page refresh**
-* Each item card has an "Undo" button/function, which is only displayed if the user has made any changes to item since the app initialized. When clicked, the selected item's state reverts to the initial one (what we had when the page first loaded)
+* Each item card has an "Undo" button/function, which is **only displayed** if the user has made any changes to item since the app initialized. When clicked, the selected item's state reverts to the initial one (what we had when the page first loaded)
 
 Given the data and their models:
 [data.ts](./data.ts)
 
 1. Fork this repository on your account
 2. Build a web app that matches the above design and functionality described above, using the available data
-3. Create a pull request with your changes to this repository when you are ready
+3. Create a pull request or share your forked repo with your changes when you are ready
 
 ## Notes
 1. You can use `Bootstrap` or any other CSS framework for your implementation **(or none of course)**. Try to match the design
