@@ -1,0 +1,103 @@
+<div class="app-container">
+  <h1 class="title">Foodtec Pizzeria</h1>
+  <div class="accordion" id="accordion-menu">
+    <div
+      class="accordion-item"
+      *ngFor="let displayItem of displayItems; let i = index"
+    >
+      <h2 class="accordion-header" [id]="'heading' + displayItem.item.itemId">
+        <button
+          class="accordion-button"
+          type="button"
+          (click)="toggleAccordion(displayItem.item.itemId)"
+          [attr.aria-expanded]="isAccordionOpen[displayItem.item.itemId]"
+          [attr.aria-controls]="'collapse' + displayItem.item.itemId"
+        >
+          {{ displayItem.item.name }}
+        </button>
+      </h2>
+      <div
+        [id]="'collapse' + displayItem.item.itemId"
+        [class.collapse]="!isAccordionOpen[displayItem.item.itemId]"
+        class="accordion-collapse"
+        [attr.aria-labelledby]="'heading' + displayItem.item.itemId"
+      >
+        <div class="accordion-body">
+          <div class="size-options">
+            <ng-container *ngFor="let priceInfo of displayItem.prices">
+              <div class="size-option">
+                <input
+                  type="checkbox"
+                  [id]="
+                    'size' +
+                    priceInfo.size.sizeId +
+                    '_item' +
+                    displayItem.item.itemId
+                  "
+                  class="large-checkbox"
+                  [(ngModel)]="
+                    selectedSizes[
+                      displayItem.item.itemId + '_' + priceInfo.size.sizeId
+                    ]
+                  "
+                  (change)="
+                    onCheckboxChange(
+                      $event,
+                      displayItem.item.itemId,
+                      priceInfo.size.sizeId
+                    )
+                  "
+                  (click)="$event.stopPropagation()"
+                />
+                <label
+                  [for]="
+                    'size' +
+                    priceInfo.size.sizeId +
+                    '_item' +
+                    displayItem.item.itemId
+                  "
+                  class="custom-checkbox"
+                ></label>
+                <label
+                  [for]="
+                    'size' +
+                    priceInfo.size.sizeId +
+                    '_item' +
+                    displayItem.item.itemId
+                  "
+                  class="btn-size-option"
+                >
+                  <span class="size-name">{{ priceInfo.size.name }}</span>
+                  <div class="price-wrapper">
+                    <span>$&nbsp;</span>
+                    <input
+                      type="number"
+                      class="price-input"
+                      [(ngModel)]="priceInfo.price.price"
+                      (change)="
+                        updatePrice(
+                          displayItem.item.itemId,
+                          priceInfo.size.sizeId,
+                          priceInfo.price.price
+                        )
+                      "
+                    />
+                  </div>
+                </label>
+              </div>
+            </ng-container>
+            <div class="undo-button-container" *ngIf="isChanged">
+              <button
+                (click)="resetAllPrices()"
+                aria-label="Undo changes"
+                class="icon-button"
+              >
+                <i class="fas fa-undo"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

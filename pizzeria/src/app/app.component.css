@@ -1,0 +1,95 @@
+.size-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+#accordion-menu {
+  max-width: 600px;
+  margin: auto;
+}
+
+.title {
+  width: fit-content;
+  padding: 10px;
+  margin: auto;
+}
+
+.size-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-size-option {
+  border: 1px solid #fa492a;
+  background-color: #fe7f2b;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 1px 2px white;
+}
+
+.btn-size-option:last-child {
+  margin-right: 0;
+}
+
+.size-name {
+  display: block;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.price {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.price-input {
+  width: 50px;
+}
+
+.large-checkbox {
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button i {
+  color: white;
+  font-size: 1.5em;
+  background-color: #fe7f2b;
+  padding: 12px;
+  border-radius: 40px;
+  box-shadow: 1px 2px white;
+}
+
+.accordion-button {
+  background-color: #fe7f2b;
+  color: white;
+  font-weight: bold;
+}
+
+.accordion-body {
+  background-color: #fa492a;
+}
